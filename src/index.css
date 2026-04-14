@@ -1,48 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-[#f4f7f6] text-[#444] font-sans antialiased selection:bg-green-100;
+    @apply bg-[#eef5f9] text-[#67757c] font-sans antialiased selection:bg-blue-100;
   }
 }
 
-.mooli-card {
-  @apply bg-white rounded-lg shadow-sm border border-black/[0.02] transition-all duration-300;
+/* Admin Press Card Style */
+.ap-card {
+  @apply bg-white rounded-md shadow-sm border-none transition-all duration-300;
 }
 
-.mooli-sidebar {
-  @apply w-64 min-h-screen bg-white border-r border-slate-100 flex flex-col flex-shrink-0 z-30 transition-all duration-300;
+/* Sidebar Styles */
+.ap-sidebar {
+  @apply w-64 min-h-screen bg-[#2f3d4a] text-[#a6b7bf] flex flex-col flex-shrink-0 z-30 transition-all duration-300;
 }
 
-.mooli-nav-item {
-  @apply flex items-center gap-3 px-6 py-2.5 text-[13px] font-semibold transition-all duration-200 border-l-4 border-transparent;
+.ap-nav-item {
+  @apply flex items-center gap-3 px-6 py-3 text-[14px] font-normal transition-all duration-200 border-l-4 border-transparent;
 }
 
-.mooli-nav-item.active {
-  @apply text-[#78b83e] border-[#78b83e] bg-slate-50/50;
+.ap-nav-item.active {
+  @apply text-white border-[#1e88e5] bg-[#27333e];
 }
 
-.mooli-nav-item:not(.active) {
-  @apply text-slate-500 hover:text-slate-800 hover:bg-slate-50/30;
+.ap-nav-item:not(.active) {
+  @apply hover:text-white hover:bg-[#27333e];
 }
 
-.mooli-section-header {
-  @apply px-6 py-4 text-[10px] font-extrabold text-slate-300 uppercase tracking-[0.2em];
+/* Header Styles */
+.ap-header {
+  @apply h-16 bg-[#1e88e5] text-white flex items-center justify-between px-6 flex-shrink-0 sticky top-0 z-20 shadow-md;
 }
 
-.mooli-green-banner {
-  @apply bg-[#78b83e] text-white rounded-lg p-8 shadow-lg shadow-green-900/10;
+.ap-stat-card {
+  @apply bg-white rounded-md shadow-sm border-none transition-all duration-300 p-6 flex items-center gap-4;
 }
 
-.mooli-stat-label {
-  @apply text-white/70 text-[11px] font-bold uppercase tracking-wider;
-}
-
-.mooli-stat-value {
-  @apply text-3xl font-extrabold mt-1;
+.ap-stat-icon {
+  @apply h-12 w-12 rounded-full flex items-center justify-center text-white text-xl;
 }
