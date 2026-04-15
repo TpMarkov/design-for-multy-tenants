@@ -7,41 +7,60 @@
 
 @layer base {
   body {
-    @apply bg-[#eef5f9] text-[#67757c] font-sans antialiased selection:bg-blue-100;
+    @apply bg-white text-[#333] font-sans antialiased selection:bg-blue-100 overflow-x-hidden;
   }
 }
 
-/* Admin Press Card Style */
-.ap-card {
-  @apply bg-white rounded-md shadow-sm border-none transition-all duration-300;
+/* iofrm specific styles - Split Layout */
+.iofrm-layout {
+  @apply min-h-screen flex flex-col md:flex-row;
 }
 
-/* Sidebar Styles */
-.ap-sidebar {
-  @apply w-64 min-h-screen bg-[#2f3d4a] text-[#a6b7bf] flex flex-col flex-shrink-0 z-30 transition-all duration-300;
+.iofrm-image-side {
+  @apply hidden md:flex md:w-1/2 lg:w-[60%] bg-[#1e88e5] relative items-center justify-center p-12 overflow-hidden;
 }
 
-.ap-nav-item {
-  @apply flex items-center gap-3 px-6 py-3 text-[14px] font-normal transition-all duration-200 border-l-4 border-transparent;
+.iofrm-image-side::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-br from-blue-600/40 to-indigo-900/60 z-10;
 }
 
-.ap-nav-item.active {
-  @apply text-white border-[#1e88e5] bg-[#27333e];
+.iofrm-image-side img {
+  @apply absolute inset-0 w-full h-full object-cover opacity-80;
 }
 
-.ap-nav-item:not(.active) {
-  @apply hover:text-white hover:bg-[#27333e];
+.iofrm-image-content {
+  @apply relative z-20 text-white max-w-lg;
 }
 
-/* Header Styles */
-.ap-header {
-  @apply h-16 bg-[#1e88e5] text-white flex items-center justify-between px-6 flex-shrink-0 sticky top-0 z-20 shadow-md;
+.iofrm-form-side {
+  @apply w-full md:w-1/2 lg:w-[40%] flex items-center justify-center p-8 md:p-16 bg-white;
 }
 
-.ap-stat-card {
-  @apply bg-white rounded-md shadow-sm border-none transition-all duration-300 p-6 flex items-center gap-4;
+.iofrm-form-content {
+  @apply w-full max-w-[400px];
 }
 
-.ap-stat-icon {
-  @apply h-12 w-12 rounded-full flex items-center justify-center text-white text-xl;
+.iofrm-input-group {
+  @apply mb-6;
+}
+
+.iofrm-input {
+  @apply w-full px-0 py-3 bg-transparent border-b-2 border-[#e1e1e1] text-sm font-medium text-[#333] placeholder:text-[#999] focus:outline-none focus:border-[#1e88e5] transition-all duration-300;
+}
+
+.iofrm-btn {
+  @apply w-full bg-[#1e88e5] hover:bg-[#1976d2] text-white font-bold py-4 px-6 rounded-lg shadow-lg shadow-blue-500/20 transition-all duration-300 active:scale-[0.98] mt-4;
+}
+
+.iofrm-label {
+  @apply block text-xs font-bold text-[#999] uppercase tracking-widest mb-1;
+}
+
+.iofrm-icon-box {
+  @apply inline-flex items-center justify-center w-14 h-14 bg-[#1e88e5] rounded-2xl shadow-xl shadow-blue-500/20 mb-8;
+}
+
+.iofrm-divider {
+  @apply mt-10 pt-8 border-t border-[#f1f1f1];
 }
